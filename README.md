@@ -1,14 +1,23 @@
 # claude-commands.nvim
 
-Use natural language to generate and execute Neovim commands via [Claude Code CLI](https://github.com/anthropics/claude-code).
+Neovim commands for the lazy - just describe what you want.
 
-## Features
+## How it works
 
-- Describe what you want in plain English
-- Claude generates the appropriate Neovim command
-- Context-aware: sends current file, cursor position, filetype to Claude
-- Ex commands (`:vsplit`) go directly to command line for review
-- Normal mode commands (`gg=G`) show preview before execution
+1. Press `<leader>ai`
+2. Type what you want: `"delete this line"`
+3. Claude generates: `dd`
+
+| You type | Neovim executes |
+|----------|-----------------|
+| "open vertical split" | `:vsplit` |
+| "show line numbers" | `:set number` |
+| "delete this line" | `dd` |
+| "indent entire file" | `gg=G` |
+| "go to line 50" | `:50` |
+| "save and quit" | `:wq` |
+
+Ex commands go to the command line for review. Other commands show a preview window.
 
 ## Requirements
 
@@ -48,28 +57,6 @@ require("claude-commands").setup({
   timeout_ms = 120000,     -- Timeout for Claude CLI (2 minutes)
 })
 ```
-
-## Usage
-
-1. Press `<leader>ai` (or your configured keybind)
-2. Type what you want to do (e.g., "open a vertical split", "delete this line")
-3. For Ex commands: review in command line, press Enter to execute
-4. For other commands: preview window shows, press Enter to execute or `q` to cancel
-
-### Examples
-
-| Prompt | Generated Command |
-|--------|-------------------|
-| "open vertical split" | `:vsplit` |
-| "show line numbers" | `:set number` |
-| "delete this line" | `dd` |
-| "indent entire file" | `gg=G` |
-| "go to line 50" | `:50` |
-| "save and quit" | `:wq` |
-
-## Commands
-
-- `:ClaudeCmd` - Run the Claude command prompt
 
 ## License
 

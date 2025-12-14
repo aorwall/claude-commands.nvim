@@ -6,16 +6,16 @@ Neovim commands for the lazy - just describe what you want.
 
 1. Press `<leader>ai`
 2. Type what you want: `"delete this line"`
-3. Claude generates: `dd`
+3. Claude generates: `:d`
 
 | You type | Neovim executes |
 |----------|-----------------|
 | "open vertical split" | `:vsplit` |
 | "show line numbers" | `:set number` |
-| "delete this line" | `dd` |
-| "indent entire file" | `gg=G` |
+| "delete this line" | `:d` |
 | "go to line 50" | `:50` |
 | "save and quit" | `:wq` |
+| "find foo" | `:/foo` |
 
 Ex commands go to the command line for review. Other commands show a preview window.
 

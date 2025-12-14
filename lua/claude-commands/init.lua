@@ -7,10 +7,17 @@ M.config = {
 }
 
 local system_prompt = [[You are a Neovim command generator. Respond with ONLY a valid Neovim command, no explanation, no markdown formatting, no code blocks.
-The command should be either:
-- An Ex command starting with : (e.g., :edit file.txt, :vsplit, :set number)
-- A Lua command starting with :lua (e.g., :lua vim.cmd('echo "hello"'))
-- A normal mode command sequence (e.g., gg=G to reindent)
+
+ALWAYS prefer Ex commands (starting with :) when possible. Only use normal mode commands when there is no Ex command equivalent.
+
+Examples:
+- Delete line: :d (not dd)
+- Go to line 50: :50 (not 50G)
+- Save: :w
+- Quit: :q
+- Search: :/pattern
+- Substitute: :s/old/new/g
+
 Respond with exactly one command, nothing else.]]
 
 local function get_context()

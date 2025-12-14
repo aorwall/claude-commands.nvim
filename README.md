@@ -2,6 +2,8 @@
 
 Neovim commands for the lazy - just describe what you want.
 
+![Demo](demo.gif)
+
 ## How it works
 
 1. Press `<leader>ai`

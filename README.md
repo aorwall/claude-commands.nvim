@@ -52,9 +52,10 @@ use {
 
 ```lua
 require("claude-commands").setup({
-  keybind = "<leader>ai",  -- Set to false to disable default keybind
-  prompt = "Claude: ",     -- Input prompt text
-  timeout_ms = 120000,     -- Timeout for Claude CLI (2 minutes)
+  keybind = "<leader>ai",              -- Set to false to disable default keybind
+  prompt = "Claude: ",                 -- Input prompt text
+  timeout_ms = 120000,                 -- Timeout for Claude CLI (2 minutes)
+  model = "claude-haiku-4-5-20251001", -- Claude model to use
 })
 ```
 

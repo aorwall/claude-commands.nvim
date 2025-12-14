@@ -4,6 +4,7 @@ M.config = {
   keybind = "<leader>ai",
   prompt = "Claude: ",
   timeout_ms = 120000,
+  model = "claude-haiku-4-5-20251001",
 }
 
 local system_prompt = [[You are a Neovim command generator. Respond with ONLY a valid Neovim command, no explanation, no markdown formatting, no code blocks.
@@ -104,7 +105,8 @@ local function call_claude(user_prompt, context, on_success, on_error)
   local full_prompt = format_context(context) .. "\n\nUser request: " .. user_prompt
 
   local cmd = string.format(
-    'claude -p --tools "" --system-prompt %s %s < /dev/null',
+    'claude -p --model %s --tools "" --system-prompt %s %s < /dev/null',
+    M.config.model,
     shell_escape(system_prompt),
     shell_escape(full_prompt)
   )

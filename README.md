@@ -21,7 +21,7 @@ Use natural language to generate and execute Neovim commands via [Claude Code CL
 
 ```lua
 {
-  "yourusername/claude-commands.nvim",
+  "aorwall/claude-commands.nvim",
   config = function()
     require("claude-commands").setup()
   end,
@@ -32,7 +32,7 @@ Use natural language to generate and execute Neovim commands via [Claude Code CL
 
 ```lua
 use {
-  "yourusername/claude-commands.nvim",
+  "aorwall/claude-commands.nvim",
   config = function()
     require("claude-commands").setup()
   end,
